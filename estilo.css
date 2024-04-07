@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    font-family: "Merienda", cursive;
+    background: linear-gradient(135deg, rgb(164, 77, 193) 50% ,rgb(208, 181, 58) 50%);
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.logo {
+    width: 30%; /* Ancho del logo como un porcentaje del ancho de la pantalla */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto; /* Centrar la imagen */
+    animation: stretch 1s infinite alternate;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Agregar sombra */
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Quitar el borde y agregar sombra */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: inline-block;
+    color: white;
+}
+
+.image-container {
+    width:  calc(44.44vw - 10px); /* Ancho del contenedor con un poco más de espacio */
+    height: auto;
+    overflow: hidden; /* Evita que la imagen se desborde */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    border-radius: 30%;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5), 0 0 40px rgba(177, 159, 79, 0.5); /* Sombras */
+}
+
+.and {
+    font-size: 24px;
+}
+
+.bar {
+    width: 150px; /* Ancho de la barra */
+    height: 6px; /* Altura de la barra */
+    background-color: rgb(212, 214, 88); /* Cambiar el color de la barra */
+    margin: 20px auto; /* Centrar la barra horizontalmente */
+    animation: stretch 2s infinite alternate;
+    border-radius: 30px;
+}
+
+.details h2 {
+    font-size: 28px; /* Aumentar tamaño de fuente */
+    color: white; /* Color blanco */
+    margin-bottom: 10px;
+}
+
+.details p {
+    color: rgb(0, 0, 0); /* Color blanco */
+}
+
+.price {
+    font-size: 20px;
+    color: rgb(0, 0, 0); /* Color blanco */
+    font-weight: bold;
+}
+
+@keyframes stretch {
+    0% { width: 50px; }
+    100% { width: 100px; }
+}
+@keyframes fade-in {
+    from {
+        opacity: 50;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto;
+    display: block; /* Hace que la imagen sea un bloque para centrarla */
+    margin: 0 auto; /* Centra la imagen horizontalmente dentro del contenedor */
+}
+
+.catalog {
+    position: relative;
+    overflow: hidden;; /* Ajustar posición absoluta de la imagen del producto */
+}
+
+.product {
+    width: 300px;
+    margin: 20px;
+    border: 5px solid lightgreen;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    box-shadow: 0 10 20px rgba(244, 0, 0, 0.5);
+    transition: box-shadow 0.5s ease-in-out;
+    /* Agregar filtro de desenfoque */
+    margin-top: 20px; /* Espacio entre los productos */
+    transform: translateY(5px); /* Desplazar los productos hacia abajo */
+    animation: fade-in 1.2s forwards; /* Animación de aparición */
+    background-image: url('./imagenes/205803381-fondo-de-papel-coloreado-en-amarillo-morado-y-azul-copie-el-espacio.jpg'); /* Cambiar 'ruta_de_la_imagen.jpg' por la URL de tu imagen de fondo */
+    background-size: cover; /* Ajustar el tamaño de la imagen para cubrir completamente el contenedor */
+}
+
+
+.product img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+    margin-top: 20px;   
+}
+    
+.product:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); /* Resaltar sombra al pasar el cursor */
+}
+
+.product img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);/* Levantar un poco al pasar el cursor */
+}
+
+.product:nth-child(even) img {
+    margin-top: 0; /* Ajustar margen superior para productos pares */ 
+} 
+
+.product:nth-child(even) {
+    border-color: lightblue; /* Cambiar color del borde para productos pares */
+}
+
+.details {
+    padding-left: 20px;
+}
+
+.details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.whatsapp-button {
+    position: fixed; /* Fijar el icono en una posición fija */
+    bottom: 20px; /* Distancia desde la parte inferior */
+    right: 20px; /* Distancia desde la derecha */
+    z-index: 999; /* Asegurar que esté sobre otros elementos */
+}
+
+.whatsapp-icon {
+    width: 50px; /* Tamaño del icono */
+    height: auto;
+}
+
+/* CSS para el contador de productos */
+.product-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.product-counter .increment,
+.product-counter .decrement {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.product-counter .increment {
+    background-color: green;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.product-counter .increment:hover {
+    background-color: lightgreen;
+    box-shadow: 0 0 10px lightgreen;
+}
+
+.product-counter .decrement {
+    background-color: red;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.product-counter .decrement:hover {
+    background-color: #ff6666;
+    box-shadow: 0 0 10px #ff6666;
+}
+
+.product-counter-box {
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
